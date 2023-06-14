@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: microservice-customer
+
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: customer
+
+server:
+  port: 8080
+  servlet:
+    context-path: /customer
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, prometheus, info, metrics
+
+    health:
+      show-details: always
+
+  metrics:
+    tags:
+      application: MonitoringCustomerMicroservice
